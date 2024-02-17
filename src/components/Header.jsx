@@ -16,7 +16,7 @@ function Header() {
   return (
     <div className="bg-custom-gray w-full fixed top-0 z-10 md:px-10">
       <div
-        className="h-[90px] w-full max-w-[1109px] mx-auto my-0 flex items-center 
+        className="h-[96px] w-full max-w-[1109px] mx-auto my-0 flex items-center 
     justify-center relative border-b border-gray-800 
     md:justify-start lg:justify-center   
     "
