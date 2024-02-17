@@ -14,20 +14,20 @@ function Header() {
   ];
   //JSX
   return (
-    <div className="bg-custom-gray md:px-10">
+    <div className="bg-custom-gray w-full fixed top-0 z-10 md:px-10">
       <div
         className="h-[90px] w-full max-w-[1109px] mx-auto my-0 flex items-center 
     justify-center relative border-b border-gray-800 
     md:justify-start lg:justify-center   
     "
       >
-        <button className="absolute left-8 md:relative md:mr-10 md:left-0 lg:hidden">
+        <button className="absolute left-6 md:relative md:mr-10 md:left-0 lg:hidden">
           <img src={menuIcon} alt="menuIcon" />
         </button>
         <img
           src={logo}
           alt="logo"
-          className="lg:absolute lg:left-8 cursor-pointer"
+          className="lg:absolute  lg:left-0 cursor-pointer"
         />
         <ul className="hidden lg:flex lg:justify-between lg:items-center lg:gap-8">
           {navLinks.map(([title, url]) => {
@@ -45,7 +45,7 @@ function Header() {
             );
           })}
         </ul>
-        <button className="absolute right-8">
+        <button className="absolute right-6 md:right-0">
           <img src={cartIcon} alt="cartIcon" />
         </button>
       </div>
