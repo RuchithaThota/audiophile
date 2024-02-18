@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import desktopHero from "../../assets/images/home/desktop/image-hero.png";
 import tabletHero from "../../assets/images/home/tablet/image-hero.png";
 import mobileHero from "../../assets/images/home/mobile/image-hero.png";
+import { Link } from "react-router-dom";
 
 function FeaturedProduct() {
   const [imgUrl, setImgUrl] = useState(mobileHero);
@@ -67,17 +68,17 @@ function FeaturedProduct() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button
+          <Link
+            to=""
             className="mt-7 md:mt-10
+            flex items-center
         border-2 border-btn-primary
       bg-btn-primary w-fit uppercase text-[13px]
-      font-bold h-12 px-8 font-manrope
-      transition-bg ease-in-out duration-300
-      hover:bg-btn-primary-hv hover:border-btn-primary-hv
-      "
+      font-bold h-12 px-8 
+      transition-bg ease-in-out duration-300"
           >
             See Product
-          </button>
+          </Link>
         </div>
       </div>
     </div>
