@@ -5,9 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'manrope': ['"Manrope"', 'sans-serif'],
-      },
       colors: {
         'custom-gray': '#101010',
         'custom-white': "#fafafa",
