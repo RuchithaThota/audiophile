@@ -36,7 +36,7 @@ function Header() {
                 <Link
                   to={url}
                   className="
-    text-custom-white font-manrope text-[13px]/6 font-semibold uppercase 
+    text-custom-white font-manrope text-[13px]/6 font-bold uppercase 
     transition-colors ease-in-out duration-300 hover:text-orange-400"
                 >
                   {title}
