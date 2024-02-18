@@ -12,7 +12,7 @@ function Categories() {
     { image: earphones, title: "earphones" },
   ];
   return (
-    <div className="w-full max-w-[1109px] mx-auto md:grid md:grid-cols-3 md:gap-4 lg:gap-8  ">
+    <div className="  md:grid md:grid-cols-3 md:gap-4 lg:gap-8  ">
       {categories.map((category, index) => {
         return (
           <div className="pt-14 mb-4 w-full relative">
