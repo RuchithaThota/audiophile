@@ -12,8 +12,10 @@ module.exports = {
         'custom-gray': '#101010',
         'custom-white': "#fafafa",
         'custom-white-2': "#fafafa80",
+        'custom-cat': '#f1f1f1',
         'footer-line': '#d87d4a',
-        'btn-primary': '#d87d4a'
+        'btn-primary': '#d87d4a',
+        'btn-primary-hv': "#edc4ab",
       },
     },
   },
