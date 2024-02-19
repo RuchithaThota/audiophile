@@ -1,9 +1,9 @@
 import React from "react";
-import headphones from "../../assets/images/shared/desktop/image-headphones.png";
-import earphones from "../../assets/images/shared/desktop/image-earphones.png";
-import speakers from "../../assets/images/shared/desktop/image-speakers.png";
+import headphones from "../assets/images/shared/desktop/image-headphones.png";
+import earphones from "../assets/images/shared/desktop/image-earphones.png";
+import speakers from "../assets/images/shared/desktop/image-speakers.png";
 import { Link } from "react-router-dom";
-import arrowRightIcon from "../../assets/images/shared/desktop/icon-arrow-right.svg";
+import arrowRightIcon from "../assets/images/shared/desktop/icon-arrow-right.svg";
 
 function Categories() {
   const categories = [
