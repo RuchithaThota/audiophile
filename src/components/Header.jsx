@@ -8,9 +8,9 @@ function Header() {
   //navLinks
   const navLinks = [
     ["Home", "/"],
-    ["Headphones", "/"],
-    ["Speakers", "/"],
-    ["Earphones", "/"],
+    ["Headphones", "/headphones"],
+    ["Speakers", "/speakers"],
+    ["Earphones", "/earphones"],
   ];
   //JSX
   return (
@@ -24,11 +24,13 @@ function Header() {
         <button className="absolute left-6 md:relative md:mr-10 md:left-0 lg:hidden">
           <img src={menuIcon} alt="menuIcon" />
         </button>
-        <img
-          src={logo}
-          alt="logo"
-          className="lg:absolute  lg:left-0 cursor-pointer"
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            className="lg:absolute  lg:left-0 cursor-pointer"
+          />
+        </Link>
         <ul className="hidden lg:flex lg:justify-between lg:items-center lg:gap-8">
           {navLinks.map(([title, url]) => {
             return (
