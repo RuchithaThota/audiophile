@@ -5,7 +5,7 @@ import "./HomeProducts.css";
 function HomeProductTwo() {
   return (
     <div className="home-product-two flex flex-col gap-8 ">
-      <h2 className="uppercase text-black font-manrope font-bold text-[28px]">
+      <h2 className="uppercase text-black font-bold text-[28px]">
         ZX7 SPEAKER
       </h2>
       <Link
