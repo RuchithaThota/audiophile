@@ -4,7 +4,7 @@ import Categories from "../components/Categories";
 import HomeProducts from "../components/Home/HomeProducts/HomeProducts";
 import AboutUs from "../components/AboutUs";
 
-function Home() {
+function HomePage() {
   return (
     <div>
       <FeaturedProduct />
@@ -22,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
