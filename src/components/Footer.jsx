@@ -9,9 +9,9 @@ function Footer() {
   //navLinks
   const navLinks = [
     ["Home", "/"],
-    ["Headphones", "/"],
-    ["Speakers", "/"],
-    ["Earphones", "/"],
+    ["Headphones", "/headphones"],
+    ["Speakers", "/speakers"],
+    ["Earphones", "/earphones"],
   ];
   return (
     <div
