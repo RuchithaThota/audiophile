@@ -1,17 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { scrollTop } from "../utils/scrollTop";
+import { getNavLinks } from "../utils/getNavLinks";
 import logo from "../assets/images/shared/desktop/logo.svg";
 import menuIcon from "../assets/images/shared/tablet/icon-hamburger.svg";
 import cartIcon from "../assets/images/shared/desktop/icon-cart.svg";
-import { Link } from "react-router-dom";
 
 function Header() {
   //navLinks
-  const navLinks = [
-    ["Home", "/"],
-    ["Headphones", "/headphones"],
-    ["Speakers", "/speakers"],
-    ["Earphones", "/earphones"],
-  ];
+  const navLinks = getNavLinks();
   //JSX
   return (
     <div className="bg-custom-gray w-full fixed top-0 z-10 md:px-10">
@@ -24,7 +21,7 @@ function Header() {
         <button className="absolute left-6 md:relative md:mr-10 md:left-0 lg:hidden">
           <img src={menuIcon} alt="menuIcon" />
         </button>
-        <Link to="/">
+        <Link to="/" onClick={scrollTop}>
           <img
             src={logo}
             alt="logo"
@@ -32,11 +29,12 @@ function Header() {
           />
         </Link>
         <ul className="hidden lg:flex lg:justify-between lg:items-center lg:gap-8">
-          {navLinks.map(([title, url]) => {
+          {navLinks.map(([title, url], index) => {
             return (
-              <li>
+              <li key={index}>
                 <Link
                   to={url}
+                  onClick={scrollTop}
                   className="
     text-custom-white font-manrope text-[13px]/6 font-bold uppercase 
     transition-colors ease-in-out duration-300 hover:text-orange-400"

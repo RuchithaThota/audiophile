@@ -1,21 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { scrollTop } from "../utilities/scrollTop";
+import arrowRightIcon from "../assets/images/shared/desktop/icon-arrow-right.svg";
 import headphones from "../assets/images/shared/desktop/image-headphones.png";
 import earphones from "../assets/images/shared/desktop/image-earphones.png";
 import speakers from "../assets/images/shared/desktop/image-speakers.png";
-import { Link } from "react-router-dom";
-import arrowRightIcon from "../assets/images/shared/desktop/icon-arrow-right.svg";
 
 function Categories() {
+  //categories
   const categories = [
-    { image: headphones, title: "headphones" },
-    { image: speakers, title: "speakers" },
-    { image: earphones, title: "earphones" },
+    { image: headphones, title: "headphones", url: "/category/headphones" },
+    { image: speakers, title: "speakers", url: "/category/speakers" },
+    { image: earphones, title: "earphones", url: "/category/earphones" },
   ];
+  //JSX
   return (
     <div className="  md:grid md:grid-cols-3 md:gap-4 lg:gap-8  ">
       {categories.map((category, index) => {
         return (
-          <div className="pt-14 mb-4 w-full relative">
+          <div className="pt-14 mb-4 w-full relative" key={index}>
             <img
               src={category.image}
               alt={category.title}
@@ -26,7 +29,8 @@ function Categories() {
                 {category.title}
               </p>
               <Link
-                to=""
+                to={category.url}
+                onClick={scrollTop}
                 className="
                 w-fit
             mx-auto
