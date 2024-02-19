@@ -9,16 +9,19 @@ function AboutUs() {
       <img
         src={mobileBestGearImg}
         alt="bestGearImg"
+        loading="lazy"
         className="rounded-lg md:hidden"
       />
       <img
         src={tabletBestGearImg}
         alt="bestGearImg"
+        loading="lazy"
         className="hidden md:block md:rounded-lg lg:hidden"
       />
       <img
         src={desktopBestGearImg}
         alt="bestGearImg"
+        loading="lazy"
         className="hidden lg:block lg:rounded-lg lg:order-2"
       />
       <div className="md:w-full md:mx-auto md:my-0 md:max-w-[575px] lg:w-[410px] lg:order-1">

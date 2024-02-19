@@ -10,16 +10,19 @@ function HeadphoneOne() {
       <img
         src={mobileXx59}
         alt="xx59 Headphones"
+        loading="lazy"
         className="rounded-lg mb-8 md:hidden"
       />
       <img
         src={tabletXx59}
         alt="xx59 Headphones"
+        loading="lazy"
         className="hidden md:block md:mb-[52px] md:rounded-lg lg:hidden"
       />
       <img
         src={desktopXx59}
         alt="xx59 Headphones"
+        loading="lazy"
         className="hidden lg:block lg:rounded-lg lg:w-1/2"
       />
       <div

@@ -22,6 +22,7 @@ function Categories() {
             <img
               src={category.image}
               alt={category.title}
+              loading="lazy"
               className="w-40 absolute left-[50%] translate-x-[-50%] top-0"
             />
             <div className="bg-custom-cat pt-[88px] pb-[22px] rounded-md text-center">

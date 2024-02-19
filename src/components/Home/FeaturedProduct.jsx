@@ -1,44 +1,29 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import desktopHero from "../../assets/images/home/desktop/image-hero.png";
 import tabletHero from "../../assets/images/home/tablet/image-hero.png";
 import mobileHero from "../../assets/images/home/mobile/image-hero.png";
 import { Link } from "react-router-dom";
 
 function FeaturedProduct() {
-  const [imgUrl, setImgUrl] = useState(mobileHero);
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
-
-  const handleResize = useCallback(() => {
-    let timeoutId;
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      setWindowWidth(window.screen.width);
-    }, 300);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize]);
-
-  useEffect(() => {
-    if (windowWidth < 768) {
-      setImgUrl(mobileHero);
-    } else if (windowWidth < 1024) {
-      setImgUrl(tabletHero);
-    } else {
-      setImgUrl(desktopHero);
-    }
-  }, [windowWidth]);
   return (
     <div className="bg-custom-gray w-full relative">
       <img
-        src={imgUrl}
+        src={mobileHero}
         alt="heroImage"
-        className="w-full h-full block align-middle
-      lg:mt-24 xl:mt-0"
+        className="w-full h-full block align-middle md:hidden"
+        loading="lazy"
+      />
+      <img
+        src={tabletHero}
+        alt="heroImage"
+        className="hidden md:block lg:hidden md:w-full md:h-full md:align-middle"
+        loading="lazy"
+      />
+      <img
+        src={desktopHero}
+        alt="heroImage"
+        className="hidden lg:block lg:w-full lg:h-full lg:align-middle"
+        loading="lazy"
       />
       <div
         className="max-w-[1109px] w-full
@@ -74,9 +59,9 @@ function FeaturedProduct() {
             flex items-center 
         border-2 border-btn-primary
       bg-btn-primary w-fit uppercase text-[13px]
-      font-bold h-12 px-8 transition-opacity ease-out duration-300 
+      font-bold h-12 px-8 transition-opacity ease-in-out duration-300 
       lg:hover:bg-btn-primary/50
-lg:hover:border-btn-primary/50
+lg:hover:border-btn-primary/50 lg:hover:border
       "
           >
             See Product

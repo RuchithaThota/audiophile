@@ -10,16 +10,19 @@ function HeadphoneThree() {
       <img
         src={mobileXx99Two}
         alt="xx99-mark-two Headphones"
+        loading="lazy"
         className="rounded-lg mb-8 md:hidden"
       />
       <img
         src={tabletXx99Two}
         alt="xx99-mark-two Headphones"
+        loading="lazy"
         className="hidden md:block md:mb-[52px] md:rounded-lg lg:hidden"
       />
       <img
         src={desktopXx99Two}
         alt="xx99-mark-two Headphones"
+        loading="lazy"
         className="hidden lg:block lg:rounded-lg lg:w-1/2"
       />
       <div

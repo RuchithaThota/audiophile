@@ -10,16 +10,19 @@ function HomeProductThree() {
       <img
         src={mobileProductThree}
         alt="earphones yx1"
+        loading="lazy"
         className="rounded-lg mb-6 md:hidden"
       />
       <img
         src={tabletProductThree}
         alt="earphones yx1"
+        loading="lazy"
         className="rounded-lg hidden md:block lg:hidden"
       />
       <img
         src={desktopProductThree}
         alt="earphones yx1"
+        loading="lazy"
         className="rounded-lg hidden lg:block"
       />
       <div

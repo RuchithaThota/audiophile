@@ -10,16 +10,19 @@ function SpeakerTwo() {
       <img
         src={mobileZX9}
         alt="ZX9 Speaker"
+        loading="lazy"
         className="rounded-lg mb-8 md:hidden"
       />
       <img
         src={tabletZX9}
         alt="ZX9 Speaker"
+        loading="lazy"
         className="hidden md:block md:mb-[52px] md:rounded-lg lg:hidden"
       />
       <img
         src={desktopZX9}
         alt="ZX9 Speaker"
+        loading="lazy"
         className="hidden lg:block lg:rounded-lg lg:w-1/2 lg:order-2"
       />
       <div

@@ -10,16 +10,19 @@ const HomeProductOne = () => {
         <img
           src={mobileProductOneImg}
           alt="speaker-zx9"
+          loading="lazy"
           className="w-[10.7rem] mb-8 block md:hidden"
         />
         <img
           src={tabletProductOneImg}
           alt="speaker-zx9"
+          loading="lazy"
           className="hidden md:block md:w-[12.325rem] md:mb-8 lg:hidden"
         />
         <img
           src={desktopProductOneImg}
           alt="speaker-zx9"
+          loading="lazy"
           className="hidden lg:block lg:w-full lg:my-auto lg:mx-0
           xl:bottom-[-1rem] xl:mt-auto xl:mb-0 xl:mx-0 xl:relative"
         />
