@@ -25,6 +25,8 @@
   }
   .home-product-two {
     background-image: url("../../../assets/images/home/tablet/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-left: 62px;
   }
 }
