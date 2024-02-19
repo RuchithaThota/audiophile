@@ -71,11 +71,13 @@ function FeaturedProduct() {
           <Link
             to=""
             className="mt-7 md:mt-10
-            flex items-center
+            flex items-center 
         border-2 border-btn-primary
       bg-btn-primary w-fit uppercase text-[13px]
-      font-bold h-12 px-8 
-      transition-bg ease-in-out duration-300"
+      font-bold h-12 px-8 transition-opacity ease-out duration-300 
+      lg:hover:bg-btn-primary/50
+lg:hover:border-btn-primary/50
+      "
           >
             See Product
           </Link>
