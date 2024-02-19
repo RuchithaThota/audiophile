@@ -72,9 +72,13 @@ function Footer() {
        lg:translate-y-[50%]
         "
         >
-          <img src={facebookIcon} alt="facebookIcon" />
-          <img src={xIcon} alt="xIcon" />
-          <img src={instaIcon} alt="instaIcon" />
+          <img
+            src={facebookIcon}
+            alt="facebookIcon"
+            className="cursor-pointer"
+          />
+          <img src={xIcon} alt="xIcon" className="cursor-pointer" />
+          <img src={instaIcon} alt="instaIcon" className="cursor-pointer" />
         </div>
       </div>
     </div>
