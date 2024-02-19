@@ -53,7 +53,7 @@ function Footer() {
         </div>
         <div className="lg:w-[560px]">
           <p
-            className="text-custom-white-2 text-center text-[16px]/6 my-12
+            className="text-custom-white-2 text-center font-medium text-[15px]/6 my-12
           md:text-left md:mb-20 md:mt-9 lg:mb-12
           "
           >
@@ -63,7 +63,11 @@ function Footer() {
             our demo facility - we’re open 7 days a week.
           </p>
         </div>
-        <p className="text-custom-white-2 text-center md:text-left">
+        <p
+          className="text-custom-white-2 text-center
+        text-[15px]
+        font-medium md:text-left"
+        >
           Copyright 2021. All Rights Reserved
         </p>
         <div
