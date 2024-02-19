@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Categories from "../components/Categories";
 import AboutUs from "../components/AboutUs";
-import CategoryTitle from "../components/CategoryTitle";
+import Categories from "../components/Categories/Categories";
+import CategoryTitle from "../components/Categories/CategoryTitle";
 
 function CategoryLayout() {
   const location = useLocation();

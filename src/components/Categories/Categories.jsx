@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { scrollTop } from "../utils/scrollTop";
-import arrowRightIcon from "../assets/images/shared/desktop/icon-arrow-right.svg";
-import headphones from "../assets/images/shared/desktop/image-headphones.png";
-import earphones from "../assets/images/shared/desktop/image-earphones.png";
-import speakers from "../assets/images/shared/desktop/image-speakers.png";
+import { scrollTop } from "../../utils/scrollTop";
+import arrowRightIcon from "../../assets/images/shared/desktop/icon-arrow-right.svg";
+import headphones from "../../assets/images/shared/desktop/image-headphones.png";
+import earphones from "../../assets/images/shared/desktop/image-earphones.png";
+import speakers from "../../assets/images/shared/desktop/image-speakers.png";
 
 function Categories() {
   //categories

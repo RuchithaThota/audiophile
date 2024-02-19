@@ -1,8 +1,8 @@
 import React from "react";
 import FeaturedProduct from "../components/Home/FeaturedProduct";
-import Categories from "../components/Categories";
 import HomeProducts from "../components/Home/HomeProducts/HomeProducts";
 import AboutUs from "../components/AboutUs";
+import Categories from "../components/Categories/Categories";
 
 function HomePage() {
   return (
