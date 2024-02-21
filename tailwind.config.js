@@ -16,6 +16,9 @@ module.exports = {
         'btn-primary': '#d87d4a',
         'btn-primary-hv': "#edc4ab",
       },
+      maxWidth: {
+        '1109': '1109px'
+      }
     },
   },
   plugins: [],
