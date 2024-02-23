@@ -5,7 +5,7 @@
 @layer base {
   html {
     font-family: "Manrope", sans-serif;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 }
 
@@ -58,7 +58,7 @@
   .page-container {
     @apply w-full mx-auto 
             max-w-[1200px] flex justify-center px-6 pt-10 pb-[120px] md:py-24 md:px-10 
-            lg:pt-[120px] lg:pb-[200px] flex-col gap-28;
+            lg:pt-[120px] lg:pb-[200px] flex-col gap-[7.5rem] md:gap-[6rem] lg:gap-[10rem];
   }
   .sectionOne {
     width: 100%;
@@ -78,6 +78,11 @@
     background-size: cover;
     padding: 100px 24px;
     border-radius: 8px;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: 1.25rem;
   }
 }
 @media screen and (min-width: 768px) {
