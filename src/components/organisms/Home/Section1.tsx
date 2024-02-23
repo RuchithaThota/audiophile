@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { HomeData } from "../../../models/Product";
 import ImageContainer from "../../molecules/ImageContainer";
+import ProductLink from "../../molecules/ProductLink";
 
 interface SectionOneProps {
     product: HomeData
@@ -24,10 +24,7 @@ function Section1({ product }: SectionOneProps) {
                 <p className="primary-para leading-6 lg:text-left">
                     {product.description}
                 </p>
-                <Link to={product.slug}
-                    className="sectionOne-btn">
-                    See Product
-                </Link>
+                <ProductLink productSlug={product.slug} className="sectionOne-btn" />
             </div>
         </div>
     );

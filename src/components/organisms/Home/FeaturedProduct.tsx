@@ -45,7 +45,7 @@ const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
                     <p className="primary-para leading-[1.5625rem] md:w-[350px] lg:text-left">
                         {product.description}
                     </p>
-                    <Link to={product.slug} className="primary-btn mt-7 md:mt-10">
+                    <Link to={`/product/${product.slug}`} className="primary-btn mt-7 md:mt-10">
                         See Product
                     </Link>
                 </div>

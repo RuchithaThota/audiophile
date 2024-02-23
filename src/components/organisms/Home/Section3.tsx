@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
 import { HomeData } from "../../../models/Product"
 import ImageContainer from "../../molecules/ImageContainer"
+import ProductLink from "../../molecules/ProductLink"
 
 interface SectionThreeProps {
     product: HomeData
@@ -17,9 +17,7 @@ function Section3({ product }: SectionThreeProps) {
                 <h2 className="h2 mb-8">
                     {product.name}
                 </h2>
-                <Link to={product.slug} className="secondary-btn">
-                    See Product
-                </Link>
+                <ProductLink productSlug={product.slug} className="secondary-btn" />
             </div>
         </div>
     )
