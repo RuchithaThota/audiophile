@@ -8,3 +8,104 @@
     scroll-behavior: smooth;
   }
 }
+
+@layer components {
+  .primary-para {
+    @apply text-para-primary text-center font-medium text-[15px];
+  }
+  .h1,
+  .h2 {
+    @apply uppercase font-bold;
+  }
+  .h2 {
+    @apply text-black text-[28px];
+  }
+  .h1 {
+    @apply text-4xl leading-[50px] tracking-[.08rem] md:text-[56px];
+  }
+  .btn {
+    @apply w-fit h-12 px-8 flex items-center  uppercase text-[13px] 
+        font-bold transition-opacity ease-in-out duration-300 border-2;
+  }
+  .primary-btn {
+    @apply btn border-primary bg-primary text-secondary
+        lg:hover:bg-orange-400 lg:hover:border-orange-400 lg:hover:opacity-80;
+  }
+  .secondary-btn {
+    @apply btn transition-colors border-charcoal text-charcoal
+    lg:hover:bg-charcoal lg:hover:text-secondary;
+  }
+  .sectionOne-btn {
+    @apply btn border-charcoal bg-charcoal text-white
+     lg:hover:bg-[#4c4c4c] lg:hover:border-[#4c4c4c] lg:hover:opacity-80;
+  }
+  .new {
+    @apply uppercase text-[14px] tracking-[.625rem] font-normal leading-[1.195rem];
+  }
+}
+
+@layer utilities {
+  .absolute-left-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-container {
+    @apply w-full mx-auto 
+            max-w-[1200px] flex justify-center px-6 pt-10 pb-[120px] md:py-24 md:px-10 
+            lg:pt-[120px] lg:pb-[200px] flex-col gap-28;
+  }
+  .sectionOne {
+    width: 100%;
+    background-color: #d87d4a;
+    background-size: 31.25rem;
+    background-position: center -100px;
+    background-image: url("/images/home/desktop/pattern-circles.svg");
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding-inline: 24px;
+    padding-block: 48px;
+  }
+  .sectionTwo {
+    width: 100%;
+    background-image: url("/images/home/mobile/image-speaker-zx7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 24px;
+    border-radius: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sectionOne {
+    background-size: 50rem;
+    background-position: center -250px;
+    padding-bottom: 4rem;
+  }
+  .sectionTwo {
+    background-image: url("/images/home/tablet/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 62px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sectionOne {
+    height: 35rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    column-gap: 8.625rem;
+    background-position: -90px -50px;
+    padding-inline: 6rem;
+    padding-block: 0;
+  }
+  .sectionTwo {
+    background-image: url("/images/home/desktop/image-speaker-zx7.jpg");
+    padding-left: 95px;
+  }
+}
