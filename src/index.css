@@ -10,8 +10,14 @@
 }
 
 @layer components {
+  .para {
+    @apply text-center font-medium text-[15px];
+  }
   .primary-para {
-    @apply text-para-primary text-center font-medium text-[15px];
+    @apply para text-para-primary;
+  }
+  .secondary-para {
+    @apply para text-para-secondary text-left leading-[1.5625rem];
   }
   .h1,
   .h2 {
@@ -59,6 +65,11 @@
     @apply w-full mx-auto 
             max-w-[1200px] flex justify-center px-6 pt-10 pb-[120px] md:py-24 md:px-10 
             lg:pt-[120px] lg:pb-[200px] flex-col gap-[7.5rem] md:gap-[6rem] lg:gap-[10rem];
+  }
+  .productCard {
+    @apply w-full flex flex-col items-center gap-6 
+                    text-center md:w-[572px] md:mx-auto md:my-0 
+                    lg:items-start lg:text-left lg:w-1/2;
   }
   .sectionOne {
     width: 100%;
