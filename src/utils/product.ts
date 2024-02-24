@@ -35,7 +35,7 @@ export const getCategoryProductsByName = (category: string) => {
         id: product.id,
         name: product.name,
         slug: product.slug,
-        image: product.image,
+        image: product.categoryImage,
         isNew: product.new,
         description: product.description,
       };
