@@ -14,7 +14,7 @@ const RecommedProducts: React.FC<RecommendedProductsProps> = ({ recommended }) =
             <div className="w-full md:grid md:grid-cols-3 md:gap-3 lg:gap-7">
                 {recommended.map((product) => {
                     return <div className="w-full mb-14 flex flex-col items-center gap-8">
-                        <div className="bg-light-gray rounded-lg">
+                        <div className="bg-lightGray rounded-lg">
                             <Picture image={product.image} alt={product.name} />
                         </div>
                         <h2 className="h2 text-center">{product.name}</h2>

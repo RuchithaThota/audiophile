@@ -17,7 +17,7 @@ function CategoryList(): JSX.Element {
                         className="w-40 absolute-left-center top-0"
                     />
                     <div className="uppercase font-bold  
-                    bg-light-gray pt-[88px] pb-[22px] rounded-md">
+                    bg-lighGray pt-[88px] pb-[22px] rounded-md">
                         <p className="p text-center text-[15px] mb-4">
                             {category.name}
                         </p>

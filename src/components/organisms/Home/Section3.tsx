@@ -12,7 +12,7 @@ function Section3({ product }: SectionThreeProps) {
             <div className="rounded-lg mb-6 md:mb-0">
                 <ImageContainer image={product.image} name={product.name} />
             </div>
-            <div className="bg-light-gray rounded-lg py-10 px-6 
+            <div className="bg-lightGray rounded-lg py-10 px-6 
             md:flex md:flex-col md:justify-center md:p-8 lg:py-10 lg:px-24">
                 <h2 className="h2 mb-8">
                     {product.name}
