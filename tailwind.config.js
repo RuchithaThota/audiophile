@@ -16,7 +16,8 @@ export default {
         'para-secondary': '#10101080',
         'header-line': '#FAFAFA1A',
         'semi-black': '#00000080',
-        'qtyBtn': '#d6d6d6'
+        'qtyBtn': '#d6d6d6',
+        'overlay': '#10101066'
       }
     },
   },
