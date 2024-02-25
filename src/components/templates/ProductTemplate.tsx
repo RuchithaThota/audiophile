@@ -8,6 +8,7 @@ import Gallery from "../organisms/Product/Gallery";
 import ProductDetails from "../organisms/Product/ProductDetails";
 import ProductImageContainer from "../organisms/Product/ProductImageContainer";
 import RecommedProducts from "../organisms/Product/RecommedProducts"
+import ProductCart from "../molecules/ProductCart";
 
 interface ProductPageTemplateProps {
     productId: number
@@ -33,6 +34,9 @@ function ProductPageTemplate({ productId }: ProductPageTemplateProps) {
                             <ProductName name={product.name} />
                         </div>
                         <ProductDesc description={product.description} />
+                        <p className="h2 text-black text-lg pt-6 pb-8 md:py-8">
+                            $ {product?.price}</p>
+                        <ProductCart />
                     </div>
                 </div>}
                 {product && <ProductDetails features={product?.features} boxItems={product?.boxItems} />}
