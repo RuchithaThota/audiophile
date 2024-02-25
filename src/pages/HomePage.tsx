@@ -6,16 +6,11 @@ import FeaturedProduct from "../components/organisms/Home/FeaturedProduct";
 import Section1 from "../components/organisms/Home/Section1";
 import Section2 from "../components/organisms/Home/Section2";
 import Section3 from "../components/organisms/Home/Section3";
-import MobileMenu from "../components/molecules/MobileMenu";
-
 
 const HomePage = () => {
   const data: HomeData[] = getHomeData();
   return (
     <div className="bg-secondary relative">
-      <div className="lg:hidden">
-        <MobileMenu />
-      </div>
       <FeaturedProduct product={data[0]} />
       <div className="page-container">
         <CategoryList />
