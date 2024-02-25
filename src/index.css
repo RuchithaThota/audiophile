@@ -7,9 +7,15 @@
     font-family: "Manrope", sans-serif;
     /* scroll-behavior: smooth; */
   }
+  body {
+    /* overflow: hidden; */
+  }
 }
 
 @layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
   .para {
     @apply text-center font-medium text-[15px];
   }
@@ -94,6 +100,9 @@
     display: grid;
     grid-template-columns: 1fr 1.4fr;
     column-gap: 1.25rem;
+  }
+  .modal-wrapper {
+    @apply fixed bg-overlay w-full h-[calc(100%_-_5.625rem)] top-[5.625rem] z-10 overflow-auto;
   }
 }
 @media screen and (min-width: 768px) {
