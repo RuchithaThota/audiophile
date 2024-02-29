@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import About from '../organisms/About'
-import CategoryTitle from '../molecules/CategoryTitle'
-import CategoryList from '../organisms/CategoryList';
+import About from '../../../components/organisms/About'
+import CategoryTitle from '../../../components/molecules/CategoryTitle'
+import CategoryList from '../../../components/organisms/CategoryList';
 
 function CategoryLayout(): JSX.Element {
     const location = useLocation();

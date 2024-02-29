@@ -1,10 +1,10 @@
 import { CategoryProduct } from "../../models/Product";
 import { getCategoryProductsByName } from "../../utils/product"
-import NewProduct from "../atoms/Product/NewProduct";
-import ProductDesc from "../atoms/Product/ProductDesc";
-import ProductName from "../atoms/Product/ProductName";
+import NewProduct from "../atoms/product/NewProduct";
+import ProductDesc from "../atoms/product/ProductDesc";
+import ProductName from "../atoms/product/ProductName";
 import ProductLink from "../molecules/ProductLink";
-import ProductImageContainer from "../organisms/Product/ProductImageContainer";
+import ProductImageContainer from "../organisms/product/ProductImageContainer";
 
 interface CategoryPageTemplateProps {
     categoryName: string

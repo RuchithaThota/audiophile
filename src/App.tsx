@@ -1,13 +1,13 @@
 import {
   Navigate, Route, RouterProvider, createBrowserRouter, createRoutesFromElements,
 } from "react-router-dom";
-import AppLayout from "./components/layout/AppLayout";
-import HomePage from "./pages/HomePage";
-import CategoryLayout from "./components/layout/CategoryLayout";
-import CategoryPageTemplate from "./components/templates/CategoryTemplate";
-import { getAllCategorySlugsWithNames, getAllProductSlugsWithIds } from "./utils/product";
-import ProductLayout from "./components/layout/ProductLayout";
-import ProductPageTemplate from "./components/templates/ProductTemplate";
+import AppLayout from "./app/components/layout/AppLayout";
+import CategoryLayout from "./app/components/layout/CategoryLayout";
+import ProductLayout from "./app/components/layout/ProductLayout";
+import { getAllCategorySlugsWithNames, getAllProductSlugsWithIds } from "./app/utils/product";
+import HomePage from "./app/pages/HomePage";
+import CategoryPageTemplate from "./app/components/templates/CategoryTemplate";
+import ProductPageTemplate from "./app/components/templates/ProductTemplate";
 
 function App() {
   const allCategorySlugsWithNames: { name: string, slug: string }[] = getAllCategorySlugsWithNames();
@@ -27,10 +27,12 @@ function App() {
           ))}
         </Route>
         <Route path="/product" element={<ProductLayout />}>
+          <Route index element={<Navigate to="/" />} />
           {allProductSlugsWithIds.map((prod, index) =>
             <Route key={index} path={prod.slug}
               element={<ProductPageTemplate productId={prod.id} />} />)}
         </Route>
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Route>
     )
   )

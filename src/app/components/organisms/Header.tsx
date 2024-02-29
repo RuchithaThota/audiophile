@@ -1,6 +1,6 @@
-import CartIcon from "../atoms/CartIcon";
-import Logo from "../atoms/Logo";
-import MenuIcon from "../atoms/MenuIcon";
+import CartIcon from "../atoms/header/CartIcon";
+import Logo from "../atoms/header/Logo";
+import MenuIcon from "../atoms/header/MenuIcon";
 import NavLinks from "../molecules/NavLinks";
 
 function Header(): JSX.Element {

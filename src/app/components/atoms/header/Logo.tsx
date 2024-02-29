@@ -1,4 +1,4 @@
-import { scrollTop } from "../../utils/scrollTop";
+import { scrollTop } from "../../../utils/scrollTop";
 import { Link } from "react-router-dom";
 function Logo() {
   return (

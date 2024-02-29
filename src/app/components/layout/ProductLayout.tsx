@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
-import About from "../organisms/About"
-import CategoryList from "../organisms/CategoryList"
+import About from "../../../components/organisms/About"
+import CategoryList from "../../../components/organisms/CategoryList"
 
 function ProductLayout() {
     return (

@@ -54,6 +54,27 @@
   .new {
     @apply uppercase text-[14px] tracking-[.625rem] font-normal leading-[1.195rem];
   }
+  .checkout-sub-heading {
+    @apply h2 text-primary text-[13px] mb-4;
+  }
+  input[type="radio"] {
+    appearance: none;
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: solid 0.0625rem #cfcfcf;
+    border-radius: 50%;
+    display: flex;
+    transition: all 0.3s ease;
+  }
+  input[type="radio"]:checked:before {
+    content: "";
+    margin: auto;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 100%;
+    background-color: #d87d4a;
+  }
 }
 
 @layer utilities {
