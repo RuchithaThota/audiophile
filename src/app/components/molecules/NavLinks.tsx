@@ -2,7 +2,11 @@ import { NavLink } from "react-router-dom";
 import { scrollTop } from "../../utils/scrollTop";
 import { getNavLinks } from "../../utils/navLinks";
 
-function NavLinks() {
+interface NavLinksProps {
+  fromFooter?: boolean
+}
+
+function NavLinks({ fromFooter }: NavLinksProps): JSX.Element {
   const navLinks = getNavLinks();
   return (
     <>
@@ -12,8 +16,9 @@ function NavLinks() {
             <NavLink
               to={url}
               onClick={scrollTop}
-              className="text-secondary font-bold text-[13px]/6 tracking-wider 
-              uppercase transition-colors ease-in-out duration-300 hover:text-primary"
+              className={({ isActive }) => !fromFooter ?
+                isActive ? 'active-nav-link' : 'nav-link' :
+                'nav-link'}
             >
               {title}
             </NavLink>
