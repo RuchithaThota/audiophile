@@ -8,6 +8,10 @@ import { getAllCategorySlugsWithNames, getAllProductSlugsWithIds } from "./app/u
 import HomePage from "./app/pages/HomePage";
 import CategoryPageTemplate from "./app/components/templates/CategoryTemplate";
 import ProductPageTemplate from "./app/components/templates/ProductTemplate";
+import CheckoutPage from "./app/pages/CheckoutPage";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import ModalContextProvider from "./context/ModalContext";
 
 function App() {
   const allCategorySlugsWithNames: { name: string, slug: string }[] = getAllCategorySlugsWithNames();
@@ -36,7 +40,11 @@ function App() {
       </Route>
     )
   )
-  return <RouterProvider router={router}></RouterProvider>
+  return <ModalContextProvider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </ModalContextProvider>
 }
 
 export default App;
