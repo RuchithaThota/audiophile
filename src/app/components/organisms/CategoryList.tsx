@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import { Category } from "../../models/Product";
 import { getCategoryList } from "../../utils/product";
 import { scrollTop } from "../../utils/scrollTop";
+import { useModal } from "../../../context/ModalContext";
 
 function CategoryList(): JSX.Element {
     const categoryList: Category[] = getCategoryList();
+    const { setIsNavOpen, isNavOpen } = useModal();
+    function handleShopLinkClick() {
+        scrollTop();
+        if (isNavOpen)
+            setIsNavOpen(false)
+    }
     //JSX
     return (
         <div className="md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
@@ -23,7 +30,7 @@ function CategoryList(): JSX.Element {
                         </p>
                         <Link
                             to={`/category/${category.slug}`}
-                            onClick={scrollTop}
+                            onClick={handleShopLinkClick}
                             className="uppercase font-bold w-fit mx-auto flex 
                             items-center gap-4 
                             text-[13px] text-semi-black lg:hover:text-primary">
