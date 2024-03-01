@@ -5,16 +5,17 @@
 @layer base {
   html {
     font-family: "Manrope", sans-serif;
-    /* scroll-behavior: smooth; */
   }
   body {
-    /* overflow: hidden; */
   }
 }
 
 @layer components {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+  .no-scroll {
+    overflow: hidden;
   }
   .para {
     @apply text-center font-medium text-[15px];
@@ -82,6 +83,25 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .absolute-left-center-none {
+    left: unset;
+    transform: none;
+  }
+  .a {
+    @apply font-bold text-[13px]/6 tracking-wider uppercase transition-colors ease-in-out duration-300 hover:text-primary;
+  }
+  .nav-link {
+    @apply a text-secondary;
+  }
+  .active-nav-link {
+    @apply a text-primary;
+  }
+  .shopping-cart-box {
+    @apply fixed top-[7rem] w-[18rem] md:w-[23.5625rem] h-[30.5rem] 
+            outline-none border-none bg-white rounded-lg 
+            absolute-left-center md:absolute-left-center-none md:right-[40px] 
+            xl:right-[160px] py-8 px-7;
   }
   .flex-center {
     display: flex;
