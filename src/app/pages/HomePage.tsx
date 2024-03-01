@@ -1,11 +1,12 @@
-import { HomeData } from "../models/Product";
-import { getHomeData } from "../utils/product";
 import About from "../components/organisms/About";
 import CategoryList from "../components/organisms/CategoryList";
-import FeaturedProduct from "../components/organisms/Home/FeaturedProduct";
-import Section1 from "../components/organisms/Home/Section1";
-import Section2 from "../components/organisms/Home/Section2";
-import Section3 from "../components/organisms/Home/Section3";
+import FeaturedProduct from "../components/organisms/home/FeaturedProduct";
+import Section1 from "../components/organisms/home/Section1";
+import Section2 from "../components/organisms/home/Section2";
+import Section3 from "../components/organisms/home/Section3";
+import { HomeData } from "../models/Product";
+import { getHomeData } from "../utils/product";
+
 
 const HomePage = () => {
   const data: HomeData[] = getHomeData();
@@ -21,7 +22,8 @@ const HomePage = () => {
         </div>
         <About />
       </div>
-    </div>);
+    </div>
+  );
 };
 
 export default HomePage;
