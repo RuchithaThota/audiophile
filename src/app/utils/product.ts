@@ -1,5 +1,5 @@
 import { Category, HomeData, Product } from "../models/Product";
-import data from "../data/products.json";
+import data from  "../../data/products.json";
 
 export const getHomeData = (): HomeData[] => {
   return data.home;
