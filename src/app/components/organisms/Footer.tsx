@@ -19,7 +19,7 @@ function Footer(): JSX.Element {
             />
           </Link>
           <ul className="flex items-center flex-col gap-4 md:gap-8 md:flex-row">
-            <NavLinks />
+            <NavLinks fromFooter={true} />
           </ul>
         </div>
         <p className="primary-para leading-7 my-12 md:text-left md:mb-20 md:mt-9 
