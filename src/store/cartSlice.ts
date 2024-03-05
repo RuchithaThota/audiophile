@@ -1,15 +1,16 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import CartItem from "../app/models/Cart";
 import { RootState } from ".";
+import { loadCart } from "../app/utils/localStorage";
 
 export type CartSlice = {
   items: CartItem[];
 };
-
+const persistedCart = loadCart();
 const initialCartState: CartSlice = { items: [] };
 export const cartSlice = createSlice({
   name: "cart",
-  initialState: initialCartState,
+  initialState: persistedCart ? persistedCart : initialCartState,
   reducers: {
     addItemToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
