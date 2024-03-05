@@ -21,7 +21,7 @@ const CartList = ({ fromCartSummary = false }: CartListProps) => {
     };
 
     return (
-        <div className="w-full h-60 overflow-auto no-scrollbar flex flex-col gap-5">
+        <div className={`w-full ${fromCartSummary ? 'h-auto' : 'h-60'} overflow-auto no-scrollbar flex flex-col gap-5`}>
             {cartList.map((listItem) => (
                 <div key={listItem.id} className="h-16 flex items-center">
                     <img
