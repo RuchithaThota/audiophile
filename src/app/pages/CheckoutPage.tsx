@@ -6,7 +6,7 @@ import ConfirmOrder from "../components/organisms/checkout/ConfirmOrder"
 function CheckoutPage() {
     return (
         <div className="relative">
-            <div className="w-full bg-secondary mt-[5.625rem] pt-4 px-6 pb-[5.625rem]
+            <div className="w-full bg-customGray mt-[5.625rem] pt-4 px-6 pb-[5.625rem]
         md:pt-[48px] md:px-[40px] md:pb-[116px] lg:pt-[79px] lg:pb-[141px]">
                 <div className="max-w-[69.375rem] mx-auto flex flex-col ">
                     <GoBackLink />
