@@ -44,6 +44,9 @@
     @apply btn border-primary bg-primary text-secondary
         lg:hover:bg-orange-400 lg:hover:border-orange-400 lg:hover:opacity-80;
   }
+  .disable-primary-btn {
+    @apply btn text-white bg-orange-400 border-orange-400 opacity-80;
+  }
   .secondary-btn {
     @apply btn transition-colors border-charcoal text-charcoal
     lg:hover:bg-charcoal lg:hover:text-secondary;
@@ -108,6 +111,18 @@
     justify-content: center;
     align-items: center;
   }
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+    animation: anim 1s linear forwards;
+  }
+  @keyframes anim {
+    100% {
+      width: 0;
+    }
+  }
   .page-container {
     @apply w-full mx-auto 
             max-w-[1200px] flex justify-center px-6 pt-10 pb-[120px] md:py-24 md:px-10 
@@ -144,6 +159,9 @@
   }
   .modal-wrapper {
     @apply fixed bg-overlay w-full h-[calc(100%_-_5.625rem)] top-[5.625rem] z-10 overflow-auto;
+  }
+  .qtyBtn {
+    @apply text-[#d6d6d6] hover:text-primary;
   }
 }
 @media screen and (min-width: 768px) {
