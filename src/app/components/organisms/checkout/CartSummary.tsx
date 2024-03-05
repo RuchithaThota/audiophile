@@ -8,6 +8,9 @@ function CartSummary() {
     const { cartTotal, gst, grandTotal } = useCartTotal();
     const [cartTotalUSD, ShippingFeeUSD, gstUSD, grandTotalUSD] =
         formatToUSD([cartTotal, SHIPPING_FEE, gst, grandTotal]);
+    const handleContinueAndPay = () => { 
+        
+    }
     //JSX
     return (
         <div className="w-full lg:w-[30.875rem] bg-white mt-8 lg:mt-0 px-6 
@@ -22,7 +25,9 @@ function CartSummary() {
                     <AmountItem label="Grand Total" amount={grandTotalUSD} />
                 </div>
             </div>
-            <button className="primary-btn w-full justify-center">Continue and Pay</button>
+            <button className="primary-btn w-full justify-center"
+                onClick={handleContinueAndPay}
+            >Continue and Pay</button>
         </div>
     )
 }
