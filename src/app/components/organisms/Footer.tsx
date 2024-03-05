@@ -23,7 +23,7 @@ function Footer(): JSX.Element {
           </ul>
         </div>
         <p className="primary-para leading-7 my-12 md:text-left md:mb-20 md:mt-9 
-        lg:w-[520px] lg:mb-12">
+        lg:w-[540px] lg:mb-12">
           Audiophile is an all in one stop to fulfill your audio needs. We're
           a small team of music lovers and sound specialists who are devoted
           to helping you get the most out of personal audio. Come and visit
