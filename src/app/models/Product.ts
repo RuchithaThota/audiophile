@@ -39,4 +39,6 @@ export interface Product extends CategoryProduct {
   boxItems: BoxItem[];
   price: number;
   gallery: ProductGallery;
+  cartImage: string;
+  shortName: string;
 }
