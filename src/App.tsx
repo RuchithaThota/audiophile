@@ -10,8 +10,9 @@ import CategoryPageTemplate from "./app/components/templates/CategoryTemplate";
 import ProductPageTemplate from "./app/components/templates/ProductTemplate";
 import CheckoutPage from "./app/pages/CheckoutPage";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { store } from "./store";
 import ModalContextProvider from "./context/ModalContext";
+import ToastContextProvider from "./context/ToastContext";
 
 function App() {
   const allCategorySlugsWithNames: { name: string, slug: string }[] = getAllCategorySlugsWithNames();
@@ -22,7 +23,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<AppLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/category" element={<CategoryLayout />}>
+        <Route path="category" element={<CategoryLayout />}>
           <Route index element={<Navigate to="/" />} />
           {allCategorySlugsWithNames.map((cat, index) => (
             <Route key={index} path={cat.slug}
@@ -30,20 +31,22 @@ function App() {
             />
           ))}
         </Route>
-        <Route path="/product" element={<ProductLayout />}>
+        <Route path="product" element={<ProductLayout />}>
           <Route index element={<Navigate to="/" />} />
           {allProductSlugsWithIds.map((prod, index) =>
             <Route key={index} path={prod.slug}
               element={<ProductPageTemplate productId={prod.id} />} />)}
         </Route>
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Route>
     )
   )
   return <ModalContextProvider>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <ToastContextProvider>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </ToastContextProvider >
   </ModalContextProvider>
 }
 
