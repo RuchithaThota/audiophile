@@ -1,5 +1,5 @@
 import { Category, HomeData, Product } from "../models/Product";
-import data from  "../../data/products.json";
+import data from "../../data/products.json";
 
 export const getHomeData = (): HomeData[] => {
   return data.home;
@@ -57,5 +57,7 @@ export const getProductById = (id: number): Product | undefined => {
     boxItems: product.includedItems,
     price: product.price,
     gallery: product.gallery,
+    cartImage: product.cartImage,
+    shortName: product.shortName,
   };
 };
