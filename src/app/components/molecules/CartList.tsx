@@ -26,12 +26,12 @@ const CartList = ({ fromCartSummary = false }: CartListProps) => {
                 <div key={listItem.id} className="h-16 flex items-center">
                     <img
                         src={listItem.image}
-                        className="w-[64px] h-[64px] mr-4"
+                        className="w-[44px] h-[44px] md:w-[64px] md:h-[64px] mr-4"
                         alt={listItem.name}
                     />
                     <div className="flex flex-col">
-                        <p className="font-bold uppercase text-[16px]">{listItem.name}</p>
-                        <p className="font-bold text-[16px]  text-para-secondary">
+                        <p className="font-bold uppercase text-[13px] md:text-[16px]">{listItem.name}</p>
+                        <p className="font-bold text-[13px] md:text-[16px]  text-para-secondary">
                             {itemPriceUSD(listItem.price)}
                         </p>
                     </div>
