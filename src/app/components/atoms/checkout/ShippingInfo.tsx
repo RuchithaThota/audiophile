@@ -7,11 +7,12 @@ function ShippingInfo() {
         <div className="w-full flex flex-col gap-6">
             <h2 className="checkout-sub-heading">Shipping Info</h2>
             <div className=''>
-                <TextInput name="addess" label="Address"
+                <TextInput name="address" label="Address"
                     placeholder="Williams Colony 1137" value={formData.address} />
             </div>
             <div className='w-full flex flex-col gap-6 md:grid md:grid-cols-2'>
-                <TextInput label="Pin Code" placeholder="10001" name="pincode" value={formData.pincode} />
+                <TextInput label="Pin Code" placeholder="10001" name="pincode"
+                    value={formData.pincode} />
                 <TextInput name="city" label="City"
                     placeholder="New York" value={formData.city} />
             </div>
