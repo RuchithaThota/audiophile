@@ -13,7 +13,9 @@ function ConfirmOrder() {
     return (
         <Modal open={isConfirmModalOpen}
             onClose={() => setIsConfirmModalOpen(false)}>
-            <Box className="fixed top-0 absolute-left-center w-11/12 mx-auto max-w-[33.75rem] 
+            <Box className="fixed top-[2rem] 
+            absolute-left-center w-11/12 mx-auto 
+            max-w-[33.75rem] 
             outline-none border-none bg-white rounded-xl z-10 p-6 mt-2 md:p-12">
                 <div className="flex flex-col justify-center items-start">
                     <img src="/images/shared/desktop/icon-check-mark.svg" alt="checkmarkIcon" />
@@ -28,11 +30,14 @@ function ConfirmOrder() {
                                 return <div>
                                     <div className="flex justify-between items-center">
                                         <img src={item.image} alt={item.name} className="w-[54px] h-[54px] mr-2" />
-                                        <p className="font-bold uppercase text-[15px]">{item.name}
+                                        <p className="font-bold uppercase text-[15px]">
+                                            {item.name}
                                             <br />
-                                            <span className="font-bold text-[15px]  text-para-secondary">
+                                            <span className="font-bold 
+                                            text-[15px]  text-para-secondary">
                                                 $ {item.price}</span></p>
-                                        <p className="text-para-secondary font-bold ml-auto">x{item.quantity}</p>
+                                        <p className="text-para-secondary 
+                                        font-bold ml-auto">x{item.quantity}</p>
                                     </div>
                                 </div>
                             })}
