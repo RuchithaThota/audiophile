@@ -17,7 +17,7 @@ const initialState = {
     setIsCartModalOpen: () => { },
     isNavOpen: false,
     setIsNavOpen: () => { },
-    isConfirmModalOpen: true,
+    isConfirmModalOpen: false,
     setIsConfirmModalOpen: () => { }
 }
 const ModalContext = createContext<ContextType>(initialState);
