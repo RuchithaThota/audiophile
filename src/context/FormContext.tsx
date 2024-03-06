@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 interface FormContextType {
     formData: {
@@ -18,7 +18,8 @@ interface FormContextType {
     formErrors: {
         [key: string]: string
     },
-    setFormErrors: React.Dispatch<React.SetStateAction<FormContextType["formErrors"]>>
+    setFormErrors: React.Dispatch<React.SetStateAction<FormContextType["formErrors"]>>,
+    resetFormData: () => void
 }
 const initialState = {
     formData: {
@@ -35,7 +36,8 @@ const initialState = {
     },
     setFormData: () => { },
     formErrors: {},
-    setFormErrors: () => { }
+    setFormErrors: () => { },
+    resetFormData: () => { }
 }
 const FormContext = createContext<FormContextType>(initialState);
 
@@ -48,10 +50,12 @@ interface FormContextProviderProps {
 const FormContextProvider = ({ children }: FormContextProviderProps) => {
     const [formData, setFormData] = useState(initialState.formData);
     const [formErrors, setFormErrors] = useState(initialState.formErrors);
-    const contextValue: FormContextType = { formData, setFormData, formErrors, setFormErrors }
-    useEffect(() => {
-        console.log(formData);
-    }, [formData])
+    const resetFormData = () => {
+        setFormData(initialState.formData);
+        setFormErrors(initialState.formErrors);
+    }
+    const contextValue: FormContextType =
+        { formData, setFormData, formErrors, setFormErrors, resetFormData }
     return <FormContext.Provider value={contextValue}>
         {children}
     </FormContext.Provider>
