@@ -37,9 +37,9 @@ function PaymentDetails() {
                     so that your order will not be cancelled.</p>
             </div>}
             {formData.paymentType === 'Online' && <div className="w-full flex flex-col gap-4 md:grid md:grid-cols-2">
-                <TextInput name="eMoneyNumber"
+                <TextInput name="eNumber"
                     label="e-Money Number" placeholder="238521993" value={formData.eNumber} />
-                <TextInput name="eMoneyPin"
+                <TextInput name="ePin"
                     label="e-Money PIN" placeholder="6891" value={formData.ePin} />
             </div>}
         </div>
