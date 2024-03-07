@@ -1,24 +1,33 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 function About() {
     return (
         <div className="lg:grid lg:grid-cols-2 lg:gap-28 lg:place-items-center">
-            <img
-                src={"/images/shared/mobile/image-best-gear.jpg"}
-                alt="bestGearImg"
-                loading="lazy"
-                className="rounded-lg md:hidden"
-            />
-            <img
-                src={"/images/shared/tablet/image-best-gear.jpg"}
-                alt="bestGearImg"
-                loading="lazy"
-                className="hidden md:block md:rounded-lg lg:hidden"
-            />
-            <img
-                src={"/images/shared/desktop/image-best-gear.jpg"}
-                alt="bestGearImg"
-                loading="lazy"
-                className="hidden lg:block lg:rounded-lg lg:order-2"
-            />
+            <div className="md:hidden">
+                <LazyLoadImage
+                    src="/images/shared/mobile/image-best-gear.jpg"
+                    placeholderSrc="/images/placeholderImg/mobile/image-best-gear-small.jpg"
+                    effect="blur"
+                    className="rounded-lg"
+                />
+            </div>
+            <div className="hidden md:block md:rounded-lg lg:hidden">
+                <LazyLoadImage
+                    src="/images/shared/tablet/image-best-gear.jpg"
+                    placeholderSrc="/images/placeholderImg/tablet/image-best-gear-small.jpg"
+                    effect="blur"
+                    className="md:rounded-lg"
+                />
+            </div>
+            <div className="hidden lg:block lg:order-2">
+                <LazyLoadImage
+                    src="/images/shared/desktop/image-best-gear.jpg"
+                    placeholderSrc="/images/placeholderImg/desktop/image-best-gear-small.jpg"
+                    effect="blur"
+                    className='lg:rounded-lg'
+                />
+            </div>
             <div className="md:w-full md:mx-auto md:my-0 md:max-w-[575px] 
             lg:w-[410px] lg:order-1">
                 <h2 className="text-black text-center mt-10 mb-8 
