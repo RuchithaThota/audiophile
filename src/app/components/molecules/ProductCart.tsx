@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useAppDispatch } from "../../../store/hooks";
 import { addItemToCart } from "../../../store/cartSlice";
-import { Product } from "../../models/Product";
+import { ProductDetails } from "../../models/Product";
 import CartItem from "../../models/Cart";
 import { useToast } from "../../../context/ToastContext";
 
 interface ProductCartProps {
-    product: Product
+    product: ProductDetails
 }
 
 function ProductCart({ product }: ProductCartProps) {

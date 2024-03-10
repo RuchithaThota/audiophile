@@ -1,4 +1,5 @@
 import {
+  Navigate,
   Route, RouterProvider, createBrowserRouter, createRoutesFromElements,
 } from "react-router-dom";
 import AppLayout from "./app/components/layout/AppLayout";
@@ -30,6 +31,7 @@ function App() {
           <Route key={index} path={`product/${prod.slug}`}
             element={<ProductPageTemplate productId={prod.id} />} />)}
         <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<Navigate to={"/"} />} />
       </Route>
     )
   )
