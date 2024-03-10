@@ -1,3 +1,4 @@
+import ProfileIcon from "../atoms/ProfileIcon";
 import CartIcon from "../atoms/header/CartIcon";
 import Logo from "../atoms/header/Logo";
 import MenuIcon from "../atoms/header/MenuIcon";
@@ -16,6 +17,7 @@ function Header(): JSX.Element {
           <NavLinks />
         </ul>
         <CartIcon />
+        <ProfileIcon />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ function CartIcon(): JSX.Element {
       setIsNavOpen(false);
   };
   return (
-    <button className="absolute right-6 md:right-0"
+    <button className="absolute right-6  md:right-0"
       onClick={toggleCartModal}>
       <img src="/images/shared/desktop/icon-cart.svg" alt="cartIcon" />
       <div className="absolute top-[-10px] right-[-12px] bg-primary w-[20px] h-[20px] rounded-xl text-white font-bold text-sm text-center">{cartList.length}</div>
