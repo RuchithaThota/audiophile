@@ -1,34 +1,39 @@
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import { ProductImage } from "../../../models/Product"
 
 interface ProductImageContProps {
     image: ProductImage,
+    placeholderImage: ProductImage,
     name: string,
     index?: number,
-    fromProductTemplate?: boolean
 }
 
-function ProductImageContainer({ image, name, index, fromProductTemplate }: ProductImageContProps) {
+function ProductImageContainer({ image, placeholderImage, name, index }: ProductImageContProps) {
     return (
         <>
-            <img
-                src={image.mobile}
-                alt={name}
-                loading="lazy"
-                className="rounded-lg mb-8 md:hidden"
-            />
-            <img
-                src={image.tablet}
-                alt={name}
-                loading="lazy"
-                className={`hidden ${fromProductTemplate ? "w-72" : ''} md:block md:mb-[52px] md:rounded-lg lg:hidden`}
-            />
-            <img
-                src={image.desktop}
-                alt={name}
-                loading="lazy"
-                className={`hidden lg:block lg:rounded-lg lg:w-1/2 
-                        ${index ? (index + 1) % 2 === 0 ? 'lg:order-2' : '' : null}`}
-            />
+            <div className="md:hidden">
+                <LazyLoadImage src={image.mobile}
+                    placeholderSrc={placeholderImage.mobile}
+                    alt={name}
+                    className="rounded-lg"
+                />
+            </div>
+            <div className="hidden md:block lg:hidden">
+                <LazyLoadImage src={image.tablet}
+                    placeholderSrc={placeholderImage.tablet}
+                    alt={name}
+                    width={"281px"}
+                    className="rounded-lg"
+                />
+            </div>
+            <div className={`hidden lg:flex lg:flex-1  
+            ${index ? (index + 1) % 2 === 0 ? 'lg:order-2' : '' : null}`}>
+                <LazyLoadImage src={image.desktop}
+                    placeholderSrc={placeholderImage.desktop}
+                    alt={name}
+                    className="rounded-lg"
+                />
+            </div >
         </>
     )
 }

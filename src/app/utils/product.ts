@@ -1,4 +1,4 @@
-import { Category, HomeData, Product } from "../models/Product";
+import { Category, HomeData, Product, ProductDetails } from "../models/Product";
 import data from "../../data/products.json";
 
 export const getHomeData = (): HomeData[] => {
@@ -27,29 +27,33 @@ export const getAllProductSlugsWithIds = (): { id: number; slug: string }[] => {
   });
 };
 
-export const getCategoryProductsByName = (category: string) => {
+export const getCategoryProductsByName = (category: string): Product[] => {
   return data.products
     .filter((product) => product.category === category)
     .map((product) => {
       return {
         id: product.id,
         name: product.name,
-        slug: product.slug,
-        image: product.categoryImage,
-        isNew: product.new,
         description: product.description,
+        slug: product.slug,
+        category: product.category,
+        categoryImage: product.categoryImage,
+        isNew: product.new,
       };
     });
 };
 
-export const getProductById = (id: number): Product | undefined => {
+export const getProductById = (id: number): ProductDetails | undefined => {
   const product = data.products.find((product) => product.id === id);
   if (!product) return undefined;
   return {
     id: product.id,
     name: product.name,
+    category: product.category,
+    categoryImage: product.categoryImage,
     description: product.description,
     image: product.image,
+    placeholderImage: product.placeholderImage,
     isNew: product.new,
     slug: product.slug,
     recommended: product.others,

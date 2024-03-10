@@ -2,15 +2,16 @@ import { ProductGallery, RecommendedProduct } from "../../models/Product";
 import { getProductById } from "../../utils/product"
 import NewProduct from "../atoms/product/NewProduct";
 import ProductDesc from "../atoms/product/ProductDesc";
-import ProductName from "../atoms/product/ProductName";
 import Gallery from "../organisms/product/Gallery";
 import ProductDetails from "../organisms/product/ProductDetails";
-import ProductImageContainer from "../organisms/product/ProductImageContainer";
 import RecommedProducts from "../organisms/product/RecommedProducts"
 import ProductCart from "../molecules/ProductCart";
 import GoBackLink from "../atoms/GoBackLink";
 import { formatToUSD } from "../../utils/formatterUSD";
 import { useMemo } from "react";
+import CategoryList from "../organisms/CategoryList";
+import About from "../organisms/About";
+import ProductImageContainer from "../organisms/product/ProductImageContainer";
 
 interface ProductPageTemplateProps {
     productId: number
@@ -23,20 +24,29 @@ function ProductPageTemplate({ productId }: ProductPageTemplateProps) {
     const recommendedProducts: RecommendedProduct[] = product.recommended;
     const productGallery: ProductGallery = product.gallery;
     return (
-        <div className="mt-[96px] md:mt-10">
-            <GoBackLink />
-            <div className="mt-6 lg:mt-14 flex flex-col gap-[7.5rem] md:gap-[6rem] lg:gap-[10rem]">
-                <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-24">
-                    <ProductImageContainer image={product.image} name={product.name} fromProductTemplate={true} />
-                    <div>
-                        {product.isNew && <NewProduct textPrimary={true} />}
-                        <div className="py-6 ">
-                            <ProductName name={product.name} />
+        <div className='bg-secondary mt-[5.625rem] 
+        pt-[1rem] px-[1.5rem] pb-[7.5rem] md:pt-[2rem] md:px-[2.5rem]
+        lg:pt-[4.9375rem] lg:pb-[10rem]
+        flex justify-center'>
+            <div className="w-full max-w-[69.375rem]
+            flex flex-col gap-[7.5rem]">
+                <div>
+                    <GoBackLink />
+                    <div className="mt-6 w-full lg:mt-14 flex flex-col items-center
+                    gap-10 md:flex-row md:gap-24 lg:gap-[7.75rem]">
+                        <ProductImageContainer image={product.image}
+                            placeholderImage={product.placeholderImage}
+                            name={product.name} />
+                        <div className="lg:flex-1">
+                            {product.isNew && <NewProduct textPrimary={true} />}
+                            <h1 className="py-6 md:pt-4 md:pb-8 uppercase font-bold 
+                            text-[28px] lg:text-[40px]">
+                                {product.name}</h1>
+                            <ProductDesc description={product.description} />
+                            <p className="pt-6 pb-8 uppercase font-bold text-[18px]">{productPriceUSD}
+                            </p>
+                            <ProductCart product={product} />
                         </div>
-                        <ProductDesc description={product.description} />
-                        <p className="h2 text-black text-lg pt-6 pb-8 md:py-8">
-                            {productPriceUSD}</p>
-                        <ProductCart product={product} />
                     </div>
                 </div>
                 <ProductDetails features={product.features}
@@ -44,6 +54,8 @@ function ProductPageTemplate({ productId }: ProductPageTemplateProps) {
                 {productGallery && <Gallery gallery={productGallery} />}
                 {recommendedProducts.length > 0 &&
                     <RecommedProducts recommended={recommendedProducts} />}
+                <CategoryList />
+                <About />
             </div>
         </div>
     )

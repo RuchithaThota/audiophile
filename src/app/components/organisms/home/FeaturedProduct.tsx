@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { HomeData } from "../../../models/Product";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 interface FeaturedProductProps {
@@ -9,24 +10,24 @@ interface FeaturedProductProps {
 const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
     return (
         <div className="bg-charcoal w-full relative">
-            <img
-                src={product.image[0].url}
-                alt="heroImage"
-                className="w-full h-full block align-middle md:hidden"
-                loading="lazy"
-            />
-            <img
-                src={product.image[1].url}
-                alt="heroImage"
-                className="hidden md:block lg:hidden md:w-full md:h-full md:align-middle"
-                loading="lazy"
-            />
-            <img
-                src={product.image[2].url}
-                alt="heroImage"
-                className="hidden lg:block lg:w-full lg:h-full lg:align-middle"
-                loading="lazy"
-            />
+            <div className="w-full h-full block align-middle md:hidden">
+                <LazyLoadImage
+                    src={product.image.mobile}
+                    placeholderSrc={product.placeholderImage.mobile}
+                    alt="heroImage" />
+            </div>
+            <div className="hidden md:block lg:hidden md:w-full md:h-full md:align-middle">
+                <LazyLoadImage
+                    src={product.image.tablet}
+                    placeholderSrc={product.placeholderImage.tablet}
+                    alt="heroImage" />
+            </div>
+            <div className="hidden lg:block lg:w-full lg:h-full lg:align-middle">
+                <LazyLoadImage
+                    src={product.image.desktop}
+                    placeholderSrc={product.placeholderImage.desktop}
+                    alt="heroImage" />
+            </div>
             <div className="max-w-[1109px] w-full
                 h-[calc(100%_-_5.625rem)]
                 absolute-left-center flex-center

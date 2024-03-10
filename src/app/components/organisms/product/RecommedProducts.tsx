@@ -1,5 +1,5 @@
 import { RecommendedProduct } from "../../../models/Product"
-import Picture from "../../molecules/Picture"
+import ImageContainer from "../../molecules/ImageContainer"
 import ProductLink from "../../molecules/ProductLink"
 
 interface RecommendedProductsProps {
@@ -15,7 +15,7 @@ const RecommedProducts: React.FC<RecommendedProductsProps> = ({ recommended }) =
                 {recommended.map((product) => {
                     return <div className="w-full mb-14 flex flex-col items-center gap-8">
                         <div className="bg-customGray rounded-lg">
-                            <Picture image={product.image} alt={product.name} />
+                            <ImageContainer image={product.image} placeholderImage={product.placeholderImage} name={product.name} />
                         </div>
                         <h2 className="h2 text-center">{product.name}</h2>
                         <ProductLink productSlug={product.slug} />

@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { cartItems, decreaseItemQuantity, increaseItemQuantity } from "../../../store/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { formatToUSD } from "../../utils/formatterUSD";
@@ -24,7 +25,8 @@ const CartList = ({ fromCartSummary = false }: CartListProps) => {
         <div className={`w-full ${fromCartSummary ? 'h-auto' : 'h-60'} overflow-auto no-scrollbar flex flex-col gap-5`}>
             {cartList.map((listItem) => (
                 <div key={listItem.id} className="h-16 flex items-center">
-                    <img
+                    <LazyLoadImage
+                        placeholderSrc={listItem.placeholderImage}
                         src={listItem.image}
                         className="w-[44px] h-[44px] md:w-[64px] md:h-[64px] mr-4"
                         alt={listItem.name}

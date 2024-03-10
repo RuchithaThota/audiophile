@@ -13,7 +13,9 @@ function Section1({ product }: SectionOneProps) {
             mx-auto mb-8 md:w-[197px] 
             lg:w-full lg:overflow-hidden lg:my-auto  
             xl:bottom-[-50px] xl:mt-auto xl:relative xl:h-[460px]'>
-                <ImageContainer image={product.image} name={product.name} />
+                <ImageContainer
+                    placeholderImage={product.placeholderImage}
+                    image={product.image} name={product.name} />
             </div>
             <div className="mx-auto flex flex-col items-center gap-6 
             md:w-[21rem] lg:items-start">

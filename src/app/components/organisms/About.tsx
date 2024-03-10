@@ -7,7 +7,7 @@ function About() {
             <div className="md:hidden">
                 <LazyLoadImage
                     src="/images/shared/mobile/image-best-gear.jpg"
-                    placeholderSrc="/images/placeholderImg/mobile/image-best-gear-small.jpg"
+                    placeholderSrc="/images/shared/mobile/image-best-gear-small.jpg"
                     effect="blur"
                     className="rounded-lg"
                 />
@@ -15,7 +15,7 @@ function About() {
             <div className="hidden md:block md:rounded-lg lg:hidden">
                 <LazyLoadImage
                     src="/images/shared/tablet/image-best-gear.jpg"
-                    placeholderSrc="/images/placeholderImg/tablet/image-best-gear-small.jpg"
+                    placeholderSrc="/images/shared/tablet/image-best-gear-small.jpg"
                     effect="blur"
                     className="md:rounded-lg"
                 />
@@ -23,7 +23,7 @@ function About() {
             <div className="hidden lg:block lg:order-2">
                 <LazyLoadImage
                     src="/images/shared/desktop/image-best-gear.jpg"
-                    placeholderSrc="/images/placeholderImg/desktop/image-best-gear-small.jpg"
+                    placeholderSrc="/images/shared/desktop/image-best-gear-small.jpg"
                     effect="blur"
                     className='lg:rounded-lg'
                 />

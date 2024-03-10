@@ -3,6 +3,7 @@ import { Category } from "../../models/Product";
 import { getCategoryList } from "../../utils/product";
 import { scrollTop } from "../../utils/scrollTop";
 import { useModal } from "../../../context/ModalContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CategoryList(): JSX.Element {
     const categoryList: Category[] = getCategoryList();
@@ -17,12 +18,13 @@ function CategoryList(): JSX.Element {
         <div className="md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
             {categoryList.map((category) => (
                 <div className="pt-14 mb-4 w-full relative" key={category.id}>
-                    <img
-                        src={category.image.url}
-                        alt={category.name}
-                        loading="lazy"
-                        className="w-40 absolute-left-center top-0"
-                    />
+                    <div className="w-40 absolute-left-center top-0">
+                        <LazyLoadImage
+                            src={category.image.url}
+                            placeholderSrc={category.placeholderImage.url}
+                            alt={category.name}
+                        />
+                    </div>
                     <div className="uppercase font-bold  
                     bg-customGray pt-[88px] pb-[22px] rounded-md">
                         <p className="p text-center text-[15px] mb-4">
