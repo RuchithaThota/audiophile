@@ -13,6 +13,7 @@ import { store } from "./store";
 import ModalContextProvider from "./context/ModalContext";
 import ToastContextProvider from "./context/ToastContext";
 import LoginPage from "./app/pages/LoginPage";
+import PrivateRoutes from "./routes/PrivateRoutes";
 
 function App() {
   const allCategorySlugsWithNames: { name: string, slug: string }[] = getAllCategorySlugsWithNames();
@@ -29,10 +30,12 @@ function App() {
           />
         ))}
         <Route path="login" element={<LoginPage />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="checkout" element={<CheckoutPage />} />
+        </Route>
         {allProductSlugsWithIds.map((prod, index) =>
           <Route key={index} path={`product/${prod.slug}`}
             element={<ProductPageTemplate productId={prod.id} />} />)}
-        <Route path="checkout" element={<CheckoutPage />} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Route>
     )
