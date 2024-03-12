@@ -3,7 +3,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export type CurrentUser = { name: string; mobileNumber: string };
 
 export interface AuthSlice {
-  user: CurrentUser;
+  user: { name: string; mobileNumber: string };
 }
 
 const initialState: AuthSlice = {
