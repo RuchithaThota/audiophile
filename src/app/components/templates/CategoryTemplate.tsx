@@ -29,9 +29,11 @@ function CategoryPageTemplate({ categoryName }: CategoryPageTemplateProps): JSX.
                                 index={index} />
                             <div className={`productCard  
                     ${(index + 1) % 2 === 0 ? 'lg:pr-32' : 'lg:pl-32'}`}>
-                                {catProduct.isNew &&
-                                    <NewProduct textPrimary={true} />
-                                }
+                                <div className="mt-6  lg:mt-unset">
+                                    {catProduct.isNew &&
+                                        <NewProduct textPrimary={true} />
+                                    }
+                                </div>
                                 <ProductName name={catProduct.name} />
                                 <ProductDesc description={catProduct.description} />
                                 <ProductLink productSlug={catProduct.slug} />
