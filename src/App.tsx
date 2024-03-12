@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import ModalContextProvider from "./context/ModalContext";
 import ToastContextProvider from "./context/ToastContext";
+import LoginPage from "./app/pages/LoginPage";
 
 function App() {
   const allCategorySlugsWithNames: { name: string, slug: string }[] = getAllCategorySlugsWithNames();
@@ -27,6 +28,7 @@ function App() {
             element={<CategoryPageTemplate categoryName={cat.name} />}
           />
         ))}
+        <Route path="login" element={<LoginPage />} />
         {allProductSlugsWithIds.map((prod, index) =>
           <Route key={index} path={`product/${prod.slug}`}
             element={<ProductPageTemplate productId={prod.id} />} />)}
