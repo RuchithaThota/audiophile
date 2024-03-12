@@ -1,4 +1,4 @@
-# Audiophile React Web App
+# Audiophile React Typescript App
 
 ![preview](/public/images/preview.png)
 
@@ -48,11 +48,8 @@ REACT_APP_FIREBASE_APP_ID=your_app_id
 4. **Start the development server**
 
 ```npm run dev
-
 ```
 
 5. **Open the app in your browser**
 
-```Open http://localhost:3000 to view it in your browser.
-
-```
+Open http://localhost:3000 to view it in your browser.
