@@ -4,6 +4,10 @@
 
 This is a React web application built for audiophiles, featuring a collection of audio products. Users can browse products, authenticate via phone number with Firebase, manage app state with Redux Toolkit, and benefit from lazy loading for optimized performance. The project was bootstrapped with Vite and TypeScript.
 
+## Preview
+
+https://rt-audiophile.netlify.app/
+
 ## Features
 
 - Authentication via phone number with Firebase
@@ -25,19 +29,21 @@ This is a React web application built for audiophiles, featuring a collection of
 
 1. **Clone the repository**
 
-   ```bash
+   ```
    git clone https://github.com/RuchithaThota/audiophile.git
    ```
 
 2. **Install dependencies**
 
-```cd audiophile
+```
+cd audiophile
 npm install
 ```
 
 3. **Set up Firebase**
 
-```REACT_APP_FIREBASE_API_KEY=your_api_key
+```
+REACT_APP_FIREBASE_API_KEY=your_api_key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
 REACT_APP_FIREBASE_PROJECT_ID=your_project_id
 REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
@@ -47,7 +53,8 @@ REACT_APP_FIREBASE_APP_ID=your_app_id
 
 4. **Start the development server**
 
-```npm run dev
+```
+npm run dev
 ```
 
 5. **Open the app in your browser**
