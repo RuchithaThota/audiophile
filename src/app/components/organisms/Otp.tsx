@@ -81,8 +81,6 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                     duration: 1000
                 })
                 console.error(error);
-            } finally {
-                setOtp(new Array(6).fill(""));
             }
     }
     const updateDisplayName = () => {
@@ -93,8 +91,10 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                 setIsLoading(false);
                 showToast({ type: 'success', title: "Login Successful", duration: 1000 });
                 navigate("/");
+                setOtp(new Array(6).fill(""));
             }).catch((error) => {
                 console.error(error);
+                setOtp(new Array(6).fill(""));
             })
     }
     const handleResend = async () => {
