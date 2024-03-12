@@ -136,7 +136,7 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
             </div>
             <div className="flex gap-2 md:gap-4">
                 {otp.map((value, index) => {
-                    return <input type="text"
+                    return <input type="tel"
                         disabled={isLoading}
                         key={index}
                         ref={(input) => (
