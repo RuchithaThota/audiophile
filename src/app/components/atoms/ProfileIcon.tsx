@@ -1,20 +1,20 @@
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { currentUser } from '../../../firebase/AuthService';
-import { useToast } from '../../../context/ToastContext';
+import Profile from '../organisms/Profile';
+import { useModal } from '../../../context/ModalContext';
 
 function ProfileIcon(): JSX.Element | null {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const user = currentUser();
-    const { showToast } = useToast();
+    const { setShowProfile, showProfile } = useModal();
     if (pathname === "/login") return null;
     const handleProfileIconClick = () => {
         if (!user) {
             navigate("/login")
         } else {
-            if (user.displayName)
-                showToast({ type: 'success', title: user.displayName, duration: 1000 })
+            if (user.displayName) setShowProfile(prev => !prev);
         }
     }
     return (
@@ -28,6 +28,7 @@ function ProfileIcon(): JSX.Element | null {
                 }}
                 onClick={handleProfileIconClick}
             />
+            {showProfile && <Profile />}
         </div>
     )
 }
