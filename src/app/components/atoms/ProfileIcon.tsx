@@ -14,11 +14,9 @@ function ProfileIcon(): JSX.Element | null {
         if (!user) {
             navigate("/login")
         } else {
-            if (user.displayName) {
-                setShowProfile(prev => !prev);
-                setIsCartModalOpen(false);
-                setIsNavOpen(false)
-            }
+            setShowProfile(prev => !prev);
+            setIsCartModalOpen(false);
+            setIsNavOpen(false)
         }
     }
     return (
