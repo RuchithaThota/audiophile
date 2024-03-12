@@ -8,13 +8,17 @@ function ProfileIcon(): JSX.Element | null {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const user = currentUser();
-    const { setShowProfile, showProfile } = useModal();
+    const { setShowProfile, showProfile, setIsCartModalOpen, setIsNavOpen } = useModal();
     if (pathname === "/login") return null;
     const handleProfileIconClick = () => {
         if (!user) {
             navigate("/login")
         } else {
-            if (user.displayName) setShowProfile(prev => !prev);
+            if (user.displayName) {
+                setShowProfile(prev => !prev);
+                setIsCartModalOpen(false);
+                setIsNavOpen(false)
+            }
         }
     }
     return (
