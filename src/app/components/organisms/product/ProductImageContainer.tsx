@@ -6,9 +6,11 @@ interface ProductImageContProps {
     placeholderImage: ProductImage,
     name: string,
     index?: number,
+    fromProductTemplate?: boolean
 }
 
-function ProductImageContainer({ image, placeholderImage, name, index }: ProductImageContProps) {
+function ProductImageContainer({ image, placeholderImage, name, index,
+    fromProductTemplate = false }: ProductImageContProps) {
     return (
         <>
             <div className="md:hidden">
@@ -22,7 +24,7 @@ function ProductImageContainer({ image, placeholderImage, name, index }: Product
                 <LazyLoadImage src={image.tablet}
                     placeholderSrc={placeholderImage.tablet}
                     alt={name}
-                    width={"281px"}
+                    width={fromProductTemplate ? "281px" : ''}
                     className="rounded-lg"
                 />
             </div>
