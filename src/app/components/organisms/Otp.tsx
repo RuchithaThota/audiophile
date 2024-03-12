@@ -5,6 +5,8 @@ import { ConfirmationResult, updateProfile } from "firebase/auth";
 import { SignIn, VerifyOTP } from "../../../firebase/AuthService";
 import { useAppSelector } from "../../../store/hooks";
 import { firebaseAuth } from "../../../firebase";
+import { useModal } from "../../../context/ModalContext";
+import Loader from "../atoms/Loader";
 
 interface OtpProps {
     confirmResult: ConfirmationResult | undefined,
@@ -19,6 +21,7 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
     const [time, setTime] = useState(30);
     const [resend, setResend] = useState(false);
     const user = useAppSelector(state => state.auth.user)
+    const { setIsLoading, isLoading } = useModal();
     useEffect(() => {
         if (inputRefs.current[0])
             inputRefs.current[0].focus();
@@ -69,8 +72,9 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
         if (combinedOtp.length === 6)
             try {
                 const result = await VerifyOTP(confirm, combinedOtp);
+                if (result)
+                    setIsLoading(true);
                 updateDisplayName();
-                console.log(result);
             } catch (error) {
                 showToast({
                     type: 'error', title: "Something went wrong try again!!",
@@ -86,6 +90,7 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
             updateProfile(firebaseAuth.currentUser, {
                 displayName: user.name
             }).then(() => {
+                setIsLoading(false);
                 showToast({ type: 'success', title: "Login Successful", duration: 1000 });
                 navigate("/");
             }).catch((error) => {
@@ -117,8 +122,11 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
         }
     }
     return (
-        <>
+        <div className="bg-white w-full max-w-[400px] 
+            mt-[40px] lg:mt-[80px] mx-auto
+            rounded-lg p-6 md:p-10 flex flex-col gap-6">
             <div id="recaptcha-container"></div>
+            {isLoading && <Loader />}
             <div>
                 <h1 className="font-bold text-lg">
                     Verify with OTP</h1>
@@ -126,9 +134,10 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                     Sent to 6281082538
                 </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-2 md:gap-4">
                 {otp.map((value, index) => {
                     return <input type="text"
+                        disabled={isLoading}
                         key={index}
                         ref={(input) => (
                             inputRefs.current[index] = input as HTMLInputElement)}
@@ -136,7 +145,7 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                         onChange={(e) => handleChange(index, e)}
                         onClick={() => handleClick(index)}
                         onKeyDown={(e) => handleKeyDown(e, index)}
-                        className="w-10 h-10 rounded-sm
+                        className="w-8 h-8 md:w-10 md:h-10 rounded-sm
                 outline-none text-center font-bold text-black
                 border border-qtyBtn"
                     />
@@ -150,16 +159,19 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                     </span>
                 </p>}
                 {resend && <button
+                    disabled={isLoading}
                     className="text-primary text-[13px] font-bold otline-none"
                     onClick={handleResend}>
                     Resend
                 </button>}
             </div >
-            <button className={`w-full justify-center 
+            <button
+                disabled={isLoading}
+                className={`w-full justify-center 
             ${otp.join("").length === 6 ? "primary-btn" : "disable-primary-btn"}`}
                 onClick={handleContinue}
             >Continue</button>
-        </>
+        </div>
     )
 }
 
