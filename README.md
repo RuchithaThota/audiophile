@@ -4,7 +4,7 @@
 
 This is a React web application built for audiophiles, featuring a collection of audio products. Users can browse products, authenticate via phone number with Firebase, manage app state with Redux Toolkit, and benefit from lazy loading for optimized performance. The project was bootstrapped with Vite and TypeScript.
 
-## Preview
+## See Live
 
 https://rt-audiophile.netlify.app/
 
