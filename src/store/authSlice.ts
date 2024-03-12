@@ -2,15 +2,11 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export type CurrentUser = { name: string; mobileNumber: string };
 
-interface AuthSlice {
-  isAuthLoading: boolean;
-  setIsAuthLoading: React.Dispatch<React.SetStateAction<boolean>>;
+export interface AuthSlice {
   user: CurrentUser;
 }
 
 const initialState: AuthSlice = {
-  isAuthLoading: false,
-  setIsAuthLoading: () => {},
   user: { name: "", mobileNumber: "" },
 };
 
