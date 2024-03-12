@@ -1,16 +1,16 @@
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '../../../context/ToastContext';
 import { Signout, currentUser } from '../../../firebase/AuthService'
+import { useModal } from '../../../context/ModalContext';
 
 function Profile() {
     const user = currentUser();
     const { showToast } = useToast();
-    const navigate = useNavigate();
+    const { setShowProfile } = useModal();
     const handleSignout = async () => {
         try {
             await Signout();
-            navigate("/");
-            showToast({ type: 'success', title: "successfully signedout!", duration: 1000 })
+            setShowProfile(false);
+            showToast({ type: 'success', title: "signout successfull!", duration: 1000 })
         } catch (error) {
             showToast({ type: 'error', title: "signout failed!", duration: 1000 })
         }
