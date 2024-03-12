@@ -10,9 +10,9 @@ function LoginPage() {
     const [confirmResult, setConfirmResult] = useState<ConfirmationResult | undefined>(undefined);
     return (
         <div className="bg-customGray w-full h-[100vh] 
-        flex-center p-4
-        mt-[5.625rem]">
-            <div className="bg-white w-full max-w-[400px] mx-auto
+        p-4 mt-[5.625rem] fixed">
+            <div className="bg-white w-full max-w-[400px] 
+            mt-[40px] lg:mt-[80px] mx-auto
             rounded-lg p-6 md:p-10 flex flex-col gap-6">
                 {!showOtpScreen && <Login
                     setConfirmResult={setConfirmResult}
