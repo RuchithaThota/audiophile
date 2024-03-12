@@ -18,6 +18,7 @@ export default {
         'semi-black': '#00000080',
         'qtyBtn': '#d6d6d6',
         'overlay': '#10101066',
+        'blur':'#c4c0c066',
         'input': '#cfcfcf'
       }
     },
