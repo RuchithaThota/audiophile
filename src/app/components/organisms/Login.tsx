@@ -79,7 +79,7 @@ function Login({ setShowOtpScreen, setConfirmResult }: {
     //JSX
     return (
         <>
-            <div id="recaptcha-container" className="rc-anchor-normal"></div>
+            <div id="recaptcha-container"></div>
             <h1 className="font-bold text-lg">
                 Login <span className="font-medium text-sm"> or </span> Signup</h1>
             <div>
