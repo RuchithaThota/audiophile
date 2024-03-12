@@ -34,3 +34,7 @@ export const VerifyOTP = async (
   const result = await confirmResult?.confirm(code);
   return result;
 };
+//Signout
+export const Signout = async () => {
+  await firebaseAuth.signOut();
+};
