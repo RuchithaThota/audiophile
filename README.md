@@ -12,7 +12,7 @@ https://rt-audiophile.netlify.app/
 
 - Authentication via phone number with Firebase
 - Redux Toolkit & Context API for app state management
-- Lazy loading for optimized performance
+- Lazy loading of images & pages for optimized performance
 - Audiophile-themed UI design
 
 ## Technologies Used
