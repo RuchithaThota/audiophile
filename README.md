@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Audiophile React Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![preview](/public/images/preview.png)
 
-Currently, two official plugins are available:
+This is a React web application built for audiophiles, featuring a collection of audio products. Users can browse products, authenticate via phone number with Firebase, manage app state with Redux Toolkit, and benefit from lazy loading for optimized performance. The project was bootstrapped with Vite and TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Authentication via phone number with Firebase
+- Redux Toolkit & Context API for app state management
+- Lazy loading for optimized performance
+- Audiophile-themed UI design
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- Vite
+- TypeScript
+- Firebase (for phone number authentication)
+- Redux Toolkit
+- Tailwind CSS
+- Material UI Components
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/RuchithaThota/audiophile.git
+   ```
+
+2. **Install dependencies**
+
+```cd audiophile
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Set up Firebase**
+
+```REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+```
+
+4. **Start the development server**
+
+```npm run dev
+
+```
+
+5. **Open the app in your browser**
+
+```Open http://localhost:3000 to view it in your browser.
+
+```
