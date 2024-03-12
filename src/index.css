@@ -7,6 +7,7 @@
     font-family: "Manrope", sans-serif;
   }
   body {
+    user-select: none;
   }
 }
 
@@ -132,6 +133,12 @@
     @apply w-full flex flex-col items-center gap-6 
                     text-center md:w-[572px] md:mx-auto md:my-0 
                     lg:items-start lg:text-left lg:w-1/2;
+  }
+  .login-input {
+    @apply border-[0.0625rem] w-full
+                     border-input focus:border-black
+                    rounded-sm px-4 py-2 outline-none font-medium text-[13px] text-black
+                    placeholder:text-[11px] placeholder:font-medium placeholder:text-qtyBtn;
   }
   .sectionOne {
     width: 100%;
