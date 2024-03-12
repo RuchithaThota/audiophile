@@ -1,9 +1,10 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react"
 import { useToast } from "../../../context/ToastContext";
 import { useNavigate } from "react-router-dom";
-import { ConfirmationResult } from "firebase/auth";
+import { ConfirmationResult, updateProfile } from "firebase/auth";
 import { SignIn, VerifyOTP } from "../../../firebase/AuthService";
 import { useAppSelector } from "../../../store/hooks";
+import { firebaseAuth } from "../../../firebase";
 
 interface OtpProps {
     confirmResult: ConfirmationResult | undefined,
@@ -68,9 +69,8 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
         if (combinedOtp.length === 6)
             try {
                 const result = await VerifyOTP(confirm, combinedOtp);
+                updateDisplayName();
                 console.log(result);
-                showToast({ type: 'success', title: "Login Successful", duration: 1000 });
-                navigate("/");
             } catch (error) {
                 showToast({
                     type: 'error', title: "Something went wrong try again!!",
@@ -81,7 +81,17 @@ function Otp({ confirmResult, setConfirmResult }: OtpProps) {
                 setOtp(new Array(6).fill(""));
             }
     }
-
+    const updateDisplayName = () => {
+        if (firebaseAuth.currentUser)
+            updateProfile(firebaseAuth.currentUser, {
+                displayName: user.name
+            }).then(() => {
+                showToast({ type: 'success', title: "Login Successful", duration: 1000 });
+                navigate("/");
+            }).catch((error) => {
+                console.error(error);
+            })
+    }
     const handleResend = async () => {
         setTime(30);
         setResend(false);
