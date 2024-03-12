@@ -140,6 +140,9 @@
                     rounded-sm px-4 py-2 outline-none font-medium text-[13px] text-black
                     placeholder:text-[11px] placeholder:font-medium placeholder:text-qtyBtn;
   }
+  .rc-anchor-normal {
+    @apply w-[200px];
+  }
   .sectionOne {
     width: 100%;
     background-color: #d87d4a;
