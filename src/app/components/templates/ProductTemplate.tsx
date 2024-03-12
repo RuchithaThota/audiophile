@@ -36,7 +36,9 @@ function ProductPageTemplate({ productId }: ProductPageTemplateProps) {
                     gap-10 md:flex-row md:gap-24 lg:gap-[7.75rem]">
                         <ProductImageContainer image={product.image}
                             placeholderImage={product.placeholderImage}
-                            name={product.name} />
+                            name={product.name}
+                            fromProductTemplate={true}
+                        />
                         <div className="lg:flex-1">
                             {product.isNew && <NewProduct textPrimary={true} />}
                             <h1 className="py-6 md:pt-4 md:pb-8 uppercase font-bold 
